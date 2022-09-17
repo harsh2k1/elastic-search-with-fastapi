@@ -192,3 +192,4 @@ easyocr
 kafka-python
 lxml
 easyocr==1.6.1
+python-multipart

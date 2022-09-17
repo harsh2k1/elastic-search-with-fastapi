@@ -7,11 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <select id = "category-id" name = "category-id">
-    {% for element in categories %}
-        <option value = "{{ element.get('id') }}">{{ element.get("content") }}</option>
-    {% endfor %}        
-    </select></select>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="choices_dropdown">Choose:</label>
+            <select id="choices_dropdown" name="cities_choice">
+                {% for choice in cities %}
+                <option value={{choice}}>{{choice}}</option>
+                <!-- The choices are correctly displayed in the dropdown menu -->
+                {% endfor %}
+            </select>
+            <label for="values_dropdown">Choose:</label>
+            <select id="values_dropdown" name="course_choice">
+                {% for choice in courseNames %}
+                <option value={{choice}}>{{choice}}</option>
+                <!-- The choices are correctly displayed in the dropdown menu -->
+                {% endfor %}
+            </select>
+        </div>
+        <button id="upload" type='submit' class="btn btn-primary">submit</button>
+    </form>
+
 </body>
 </html>

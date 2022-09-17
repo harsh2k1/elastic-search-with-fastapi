@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border=2>
+        <tbody>
+            <tr>
+                {% for col in results.columns %}
+                <th>
+                    {{col}}
+                </th>
+                {% endfor %}
+            </tr>
+        {% for element in results.get("fullName") %}
+            <tr>                
+                <td>
+                    {{element}}
+                </td>
+            </tr>
+        {% endfor %}
+            
+        </tbody>
+    </table>
+</body>
+</html>
